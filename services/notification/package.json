@@ -6,10 +6,10 @@
   "types": "./dist/main.d.ts",
   "scripts": {
     "build": "nest build",
+    "clean": "rm -rf dist",
     "dev": "nest start --watch",
     "start": "node dist/main.js",
-    "typecheck": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@golevelup/nestjs-rabbitmq": "^9.0.2",

@@ -7,36 +7,29 @@
   "scripts": {
     "build": "pnpm build:common && pnpm build:types && pnpm build:sdks && pnpm build:services",
     "build:common": "pnpm --filter @minishop/common build",
-    "build:types": "pnpm --filter './libs/types/*' build",
+    "build:libs": "pnpm build:common && pnpm build:types && pnpm build:sdks",
     "build:sdks": "pnpm --filter './libs/sdks/*' build",
     "build:services": "pnpm --filter './services/*' build",
-    "build:libs": "pnpm build:common && pnpm build:types && pnpm build:sdks",
+    "build:types": "pnpm --filter './libs/types/*' build",
     "dev": "pnpm --parallel --filter './services/*' run dev",
     "dev:catalog": "pnpm --filter @minishop/catalog dev",
-    "dev:order": "pnpm --filter @minishop/order dev",
     "dev:notification": "pnpm --filter @minishop/notification dev",
-    "typecheck": "pnpm --recursive --if-present typecheck",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "lint": "biome check .",
-    "lint:fix": "biome check --write .",
+    "dev:order": "pnpm --filter @minishop/order dev",
     "format": "biome format --write .",
-    "infra:up": "docker compose up --detach",
     "infra:down": "docker compose down",
     "infra:reset": "docker compose down --volumes",
-    "prepare": "husky"
+    "infra:up": "docker compose up --detach",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "prepare": "husky",
+    "syncpack:fix": "syncpack fix",
+    "syncpack:format": "syncpack format",
+    "syncpack:format:check": "syncpack format --check",
+    "syncpack:lint": "syncpack lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "pnpm --recursive --if-present typecheck"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "11.13.0",
-      "onFail": "download"
-    }
-  },
-  "type": "module",
   "devDependencies": {
     "@biomejs/biome": "^2.5.3",
     "@commitlint/cli": "^21.2.1",
@@ -49,5 +42,16 @@
     "syncpack": "^15.3.2",
     "typescript": "~5.4.5",
     "vitest": "^4.1.10"
-  }
+  },
+  "author": "",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.13.0",
+      "onFail": "download"
+    }
+  },
+  "keywords": [],
+  "license": "ISC",
+  "type": "module"
 }

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://unpkg.com/syncpack@15.3.2/schema.json",
+  "indent": "  ",
+  "source": [
+    "package.json",
+    "libs/*/package.json",
+    "libs/types/*/package.json",
+    "libs/sdks/*/package.json",
+    "services/*/package.json"
+  ],
+  "sortFirst": [
+    "name",
+    "version",
+    "private",
+    "description",
+    "main",
+    "types",
+    "exports",
+    "files",
+    "scripts",
+    "dependencies",
+    "devDependencies",
+    "peerDependencies"
+  ],
+  "semverGroups": [
+    {
+      "label": "Keep TypeScript on patch-compatible updates",
+      "dependencies": ["typescript"],
+      "dependencyTypes": ["dev"],
+      "range": "~"
+    },
+    {
+      "label": "Use caret ranges for external packages",
+      "dependencyTypes": ["prod", "dev"],
+      "specifierTypes": ["range"],
+      "range": "^"
+    }
+  ],
+  "versionGroups": [
+    {
+      "label": "Use workspace protocol for internal packages",
+      "dependencies": ["@minishop/**"],
+      "dependencyTypes": ["prod", "dev", "peer"],
+      "pinVersion": "workspace:*"
+    }
+  ]
+}

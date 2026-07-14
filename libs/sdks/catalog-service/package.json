@@ -15,8 +15,8 @@
   ],
   "scripts": {
     "build": "nest build",
-    "typecheck": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@golevelup/nestjs-rabbitmq": "^9.0.2",
