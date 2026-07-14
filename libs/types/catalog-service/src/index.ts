@@ -1,1 +1,2 @@
-export const CATALOG_SERVICE_TYPES_READY = true
+export * from './check-stock.contract'
+export * from './get-product.contract'
