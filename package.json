@@ -1,0 +1,53 @@
+{
+  "name": "minishop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm build:common && pnpm build:types && pnpm build:sdks && pnpm build:services",
+    "build:common": "pnpm --filter @minishop/common build",
+    "build:types": "pnpm --filter './libs/types/*' build",
+    "build:sdks": "pnpm --filter './libs/sdks/*' build",
+    "build:services": "pnpm --filter './services/*' build",
+    "build:libs": "pnpm build:common && pnpm build:types && pnpm build:sdks",
+    "dev": "pnpm --parallel --filter './services/*' run dev",
+    "dev:catalog": "pnpm --filter @minishop/catalog dev",
+    "dev:order": "pnpm --filter @minishop/order dev",
+    "dev:notification": "pnpm --filter @minishop/notification dev",
+    "typecheck": "pnpm --recursive --if-present typecheck",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "infra:up": "docker compose up --detach",
+    "infra:down": "docker compose down",
+    "infra:reset": "docker compose down --volumes",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.13.0",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.3",
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
+    "@nestjs/cli": "^11.0.24",
+    "@nestjs/schematics": "^11.1.0",
+    "@types/node": "^26.1.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8",
+    "syncpack": "^15.3.2",
+    "typescript": "~5.4.5",
+    "vitest": "^4.1.10"
+  }
+}

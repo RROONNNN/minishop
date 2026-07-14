@@ -1,0 +1,33 @@
+{
+  "name": "@minishop/catalog",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "scripts": {
+    "build": "nest build",
+    "dev": "nest start --watch",
+    "start": "node dist/main.js",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@apollo/server": "^5.5.1",
+    "@golevelup/nestjs-rabbitmq": "^9.0.2",
+    "@minishop/catalog-service-types": "workspace:*",
+    "@minishop/common": "workspace:*",
+    "@nestjs/apollo": "^13.4.2",
+    "@nestjs/common": "^11.1.28",
+    "@nestjs/config": "^4.0.4",
+    "@nestjs/core": "^11.1.28",
+    "@nestjs/graphql": "^13.4.2",
+    "@nestjs/mongoose": "^11.0.4",
+    "@nestjs/platform-fastify": "^11.1.28",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.15.1",
+    "graphql": "^16.14.2",
+    "mongoose": "^9.7.4",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
+  }
+}

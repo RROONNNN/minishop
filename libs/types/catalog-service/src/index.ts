@@ -1,0 +1,1 @@
+export const CATALOG_SERVICE_TYPES_READY = true

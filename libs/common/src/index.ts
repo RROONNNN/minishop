@@ -1,0 +1,1 @@
+export const COMMON_PACKAGE_READY = true

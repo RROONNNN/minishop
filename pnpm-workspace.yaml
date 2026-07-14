@@ -1,0 +1,7 @@
+packages:
+  - 'libs/*'
+  - 'libs/types/*'
+  - 'libs/sdks/*'
+  - 'services/*'
+allowBuilds:
+  '@apollo/protobufjs': false
