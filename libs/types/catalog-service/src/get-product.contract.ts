@@ -1,4 +1,4 @@
-export const GET_PRODUCT_CONTRACT = 'catalog.product.get'
+export const GET_PRODUCT_PATTERN = 'catalog.product.get'
 
 export interface CatalogProduct {
     id: string

@@ -1,8 +1,7 @@
 import { type RabbitMQConfig, RabbitMQModule } from '@golevelup/nestjs-rabbitmq'
+import { directExchangeKey, ServiceName, topicExchangeKey } from '@minishop/common'
 import { Module } from '@nestjs/common'
 import { ConfigModule, ConfigService } from '@nestjs/config'
-
-import { directExchangeKey, ServiceName, topicExchangeKey } from '../../../../libs/common/dist'
 @Module({
     imports: [
         RabbitMQModule.forRootAsync({

@@ -1,3 +1,5 @@
 export * from './constants/exchange-key.constant'
 export * from './constants/service-name.enum'
+export * from './modules/mediator'
+export * from './modules/request-context'
 export * from './utils/rabbitmq.utils'
