@@ -4,3 +4,14 @@ export interface Product {
     price: number
     availableStock: number
 }
+export interface CreateProductInput {
+    name: string
+    price: number
+    availableStock: number
+}
+
+export interface StockCheckResult {
+    productExists: boolean
+    available: boolean
+    availableStock: number
+}
